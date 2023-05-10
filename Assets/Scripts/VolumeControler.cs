@@ -8,29 +8,19 @@ using UnityEngine.EventSystems;
 public class VolumeControler : MonoBehaviour
 {
     [SerializeField] public float currentVolume;
-    [SerializeField] public float volumeMax = 100.0f;
+    // [SerializeField] public float volumeMax = 100.0f;
     // public TextMeshProUGUI currentVolumeText;
     public Text currentVolumeText;
     public Slider volumeSlider;
 
     void Start()
     {
-        currentVolume = 80.0f;
-        volumeSlider.value = currentVolume;
-        volumeSlider.maxValue = volumeMax;
-        
-        volumeSlider.onValueChanged.AddListener(delegate {VolumeValueChange();});
+        currentVolume = 0.8f;
+        // volumeSlider.value = currentVolume;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeVolume()
     {
-        VolumeValueChange();
-        currentVolumeText.text = currentVolume.ToString();
-    }
-
-    public void VolumeValueChange()
-    {
-        Debug.Log(volumeSlider.value);
+        AudioListener.volume = volumeSlider.value;
     }
 }
