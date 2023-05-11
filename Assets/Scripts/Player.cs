@@ -12,9 +12,8 @@ public class PlayerInfo
 [Serializable]
 public class PlayerStats
 {
-    public int force;
+    public int score;
     public int lvl;
-    public int money;
 }
 
 public class Player : MonoBehaviour
@@ -25,6 +24,11 @@ public class Player : MonoBehaviour
     }
 
     void Update()
+    {
+        
+    }
+    
+    public void SaveTheGame()
     {
         
     }
