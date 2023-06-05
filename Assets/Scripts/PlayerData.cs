@@ -14,6 +14,7 @@ public class PlayerData
 public class SaveData : MonoBehaviour
 {
     [SerializeField] private PlayerData m_PlayerData = new PlayerData();
+    
 
     public void SaveIntoJson()
     {
