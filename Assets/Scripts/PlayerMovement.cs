@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement instance;
     public float moveSpeed;
     public Transform orientation;
     float horizontalInput;
@@ -13,6 +12,18 @@ public class PlayerMovement : MonoBehaviour
     public PlayerData player;
     Vector3 moveDirection;
     Rigidbody rb;
+
+    private void Awake()
+    {
+        if(instance)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
 
     private void Start()
     {
